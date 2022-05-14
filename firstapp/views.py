@@ -3,8 +3,22 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse('<h1>H1</h1>') #リクエストが来たらこの値をレスポンスとして返す
-    
+    value = 'good bye'
+    return render(request,'app/index.html', context={'value':value})  
+
+def home(request):
+    my_name = 'taro Yamada'
+    favorite_fruits = ['Apple','Grape','H']
+    my_info = {
+        'name':'taro',
+        'age':18
+    }
+
+    return render(request, 'app/home.html', context = {
+        'my_name': my_name,
+        'favorite_fruits':favorite_fruits,
+        'my_info' : my_info
+    })
 def user_page(request,user_name):
     return HttpResponse(f'<h1>{user_name}`s page</h1>')
 

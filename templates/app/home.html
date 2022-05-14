@@ -1,0 +1,10 @@
+{# <h1>{{my_name}}について</h1> #}
+{# <p>私の好きなフルーツは{{favorite_fruits.2}}です。</p>#}
+{#<p>Age: {{my_info.age}}</p>#}
+
+{% for fruit in favorite_fruits%}
+    <li>
+        {{fruit}}
+    </li>
+{%endfor%}
+
