@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'firstapp',
 ]
 
 MIDDLEWARE = [
@@ -73,13 +74,14 @@ WSGI_APPLICATION = 'practice_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+#---------------データベースの設定をしたもの(default sqliteは一つのファイルでデータ情報を管理しているDB)---------------
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+#---------------データベースの設定をしたもの---------------
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -103,13 +105,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#--------------国別設定(ここを設定すると画面表示が設定した国の言語となる)------------------#
+LANGUAGE_CODE = 'ja' #表示する言語（元々はen-us）
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = True #Trueにすると現地のタイムゾーンに変換してくれる
+#--------------国別設定(ここを設定すると画面表示が設定した国の言語となる)------------------#
 
 
 # Static files (CSS, JavaScript, Images)
